@@ -1,1 +1,57 @@
+#DATA VISUALIZATION USING MATPLOTLIB
+
+#STEP -1 : Import Libraries
+import pandas as pd
+import matplotlib. pyplot as plt
+print("KFMSCIT017 Khansa Khan\n")
+#Uploading Dataset
+data = pd.read_csv(r"C:\Users\Khansa\Downloads\Nifty.csv")
+
+print(data)
+print(" ")
+
+#Plotting of x-axis & y-axis plot
+plt. plot(data['Open '],marker = "o",markeredgecolor="white", markerfacecolor="blue")
+plt. plot(data['Close '],marker = "o",markeredgecolor="white", markerfacecolor="orange")
+
+plt.grid()
+plt. title("Line Plot of NIFTY-50 by using Matplotlib")
+plt. xlabel('Open ')
+plt. ylabel('Close ')
+plt.legend(['Open', 'Close'])
+plt. show()
+
+#DATA VISUALIZATION USING SEABORN
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+print("KFMSCIT017 Khansa Khan\n")
+# Load dataset
+data = pd.read_csv(r"C:\Users\Khansa\Downloads\Nifty.csv")
+
+# Plotting
+plt.figure(figsize=(10, 6))
+sns.lineplot(data=data[['Open ', 'Close ']], markers=True, marker='o', markeredgecolor="white", palette=['green', 'red'])
+plt.title("Line Plot of NIFTY-50 by using Seaborn")
+plt.xlabel('Index')
+plt.ylabel('Price')
+plt.grid(True)
+plt.show()
+
+#DATA VISUALIZATION USING PLOTLY
+import pandas as pd
+import plotly.express as px
+print("KFMSCIT017 Khansa Khan\n")
+# Load dataset
+data = pd.read_csv(r"C:\Users\Khansa\Downloads\Nifty.csv")
+
+# Plotting
+fig = px.line(data, x=data.index, y=['Open ', 'Close '], markers=True,
+              title="Line Plot of NIFTY-50 using Plotly", labels={'index': 'Index', 'value': 'Price'},
+              color_discrete_sequence=['green', 'red'])
+
+fig.update_layout(legend_title='Price', legend=dict(x=0, y=1, traceorder='normal'),
+                  plot_bgcolor='rgba(0,0,0,0)')
+
+fig.show()
 
