@@ -1,0 +1,38 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# reading the database
+data = pd.read_csv(r"C:\Users\Khansa\Downloads\tips.csv")
+print("KMSCIT017 Khansa Khan")
+
+
+# Bar chart with day against tip
+plt.bar(data['day'], data['tip'])
+
+plt.title("Bar Chart")
+
+# Setting the X and Y labels
+plt.xlabel('Day')
+plt.ylabel('Tip')
+
+# Adding the legends
+plt.show()
+
+#Creating Pie Charts
+import matplotlib.pyplot as plt 
+import numpy as np
+y = np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+plt.title("Pie Chart Khansa Khan KFMSCIT017")
+plt.pie(y,labels=mylabels)
+plt.show()
+
+
+import matplotlib.pyplot as plt 
+import numpy as np
+y= np.array([35, 25, 25, 15])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+mycolors = ["black", "hotpink", "b", "#4CAF50"]
+plt.title("Pie Chart Khansa Khan KFMSCIT017")
+plt.pie(y, labels= mylabels, colors= mycolors) 
+plt.show()
